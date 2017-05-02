@@ -1,6 +1,6 @@
 # Security OAuth 2 - Resource Server
 
-Este módulo provê uma API Restful para gerenciamento dos usuários autorizados pelo [Security OAuth 2 - OAuth 2 Server](https://gitlab.rbs.com.br/rbsdev/security-oauth2/tree/master/security-oauth2-server).
+Este módulo provê uma API Restful para gerenciamento dos usuários autorizados pelo [Security OAuth 2 - OAuth 2 Server](https://github.com/danielbarcellos/security-oauth2/tree/master/security-oauth2-server).
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ Essas instruções fará com que você consiga uma cópia do projeto pronta para
 
 ### Pré-requisitos
 
-Clone de RBS GIT Lab e então use Gradle 3.4.* e Java 8:
+Clone de GIT Hub e então use Gradle 3.4.* e Java 8:
 
 ```
 git clone ...
@@ -65,7 +65,7 @@ A resposta do servidor com o token de acesso:
     "expires_in": 35999, 
     "jti": "043fe44b-1e85-40fa-b161-0ac933a231ec", 
     "refresh_token": "<REFRESH TOKEN>", 
-    "scope": "exibicao criacao atualizacao exclusao", 
+    "scope": "read create update delete", 
     "token_type": "bearer"
 }
 
@@ -86,26 +86,26 @@ http http://localhost:9001/oauth/user 'Authorization:Bearer <ACCESS TOKEN>'
             "name": "ROLE_USER", 
             "resources": [
                 {
-                    "endpoint": "carrinhos", 
+                    "endpoint": "resource1", 
                     "grants": [
                         "read", 
                         "update", 
                         "create", 
                         "delete"
                     ], 
-                    "prefix": "loja", 
-                    "resourceUri": "/loja/carrinhos"
+                    "prefix": "prefix", 
+                    "resourceUri": "/prefix/resource1"
                 }, 
                 {
-                    "endpoint": "backoffice", 
+                    "endpoint": "resource2", 
                     "grants": [
                         "read", 
                         "update", 
                         "create", 
                         "delete"
                     ], 
-                    "prefix": "loja", 
-                    "resourceUri": "/loja/backoffice"
+                    "prefix": "prefix", 
+                    "resourceUri": "/prefix/resource2"
                 }
             ]
         }
@@ -133,11 +133,11 @@ http http://localhost:9001/oauth/user 'Authorization:Bearer <ACCESS TOKEN>'
 
 ## Versionamento
 
-We use [RBS GIT Lab](https://gitlab.rbs.com.br) for versioning. For the versions available, see the [tags on this repository](https://gitlab.rbs.com.br/rbsdev/security-oauth2). 
+We use [GIT Lab](https://github.com) for versioning. For the versions available, see the [tags on this repository](https://github.com/danielbarcellos/security-oauth2). 
 
 ## Authors
 
-* **Daniel Barcellos** - *Initial work* - [TC-Daniel_Barcellos](https://gitlab.rbs.com.br/TC-Daniel_Barcellos)
+* **Daniel Barcellos** - *Initial work* - [Daniel Barcellos](https://github.com/danielbarcellos)
 
 ## Agradecimentos
 
