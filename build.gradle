@@ -1,0 +1,10 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse-wtp'
+
+    version = '1.0.0'
+
+    jar {
+        manifest.attributes provider: 'gradle'
+    }
+}

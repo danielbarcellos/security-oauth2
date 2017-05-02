@@ -1,0 +1,39 @@
+project.version='1.0.0'
+project.description="OAuth2 Common"
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+jar {
+	baseName = 'security-oauth2-common'
+	version = project.version
+	manifest {
+      attributes 'Implementation-Title': project.description,
+                 'Implementation-Version': version
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+processResources {
+    filesMatching("**/application.yml") {
+        expand( project.properties )
+    }
+}
+ 
+dependencies {
+    
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+	compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.2.1.RELEASE'
+	
+	// https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2
+    compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.1.0.RELEASE'
+	
+	compile group: 'junit', name: 'junit', version:'4.12'
+}

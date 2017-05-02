@@ -1,0 +1,36 @@
+info:
+  app.name: 'oauth2-resource-server'
+  app.version: '0.0.1-SNAPSHOT'
+  app.title: 'OAuth 2 Resource Server'
+  app.description: 'OAuth 2 Resource Server'
+
+auth:
+  uriPattern: '/**'    
+
+server:
+  contextPath: '/oauth'
+  port: 9001
+
+logging:
+  level:
+    ROOT: DEBUG
+---
+spring:
+  profiles: default, development
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth_db?createDatabaseIfNotExist=true
+    username: oauthuser
+    password: oauthuser
+    driver-class-name: com.mysql.jdbc.Driver
+    data-source-className: org.springframework.jdbc.datasource.DriverManagerDataSource
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+    serialization:
+      write-dates-as-timestamps: false
+  allowedOriginsUrls:
+    urls: http://localhost:8000, http://localhost:1110, http://app-poc-backoffice.paas.rbs.com.br, http://app-poc-backoffice-hlg.paas.rbs.com.br
+---

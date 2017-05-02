@@ -1,0 +1,1 @@
+include "security-oauth2-common", "security-oauth2-resource", "security-oauth2-server"
