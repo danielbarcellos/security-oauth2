@@ -44,7 +44,7 @@ We use [GIT Hub](https://github.com) for versioning. For the versions available,
 
 ## Authors
 
-* **Daniel Barcellos** - *Initial work* - [Daniel Barcellos](https://github.com/danielbarcellos/security-oauth2)
+* **Daniel Barcellos** - *Initial work* - [Daniel Barcellos](https://github.com/danielbarcellos)
 
 ## Agradecimentos
 
