@@ -1,17 +1,6 @@
-# Security OAuth 2 - OAuth 2 Server
+# Security OAuth 2 - Resource Server
 
-Este projeto é uma implementação para o [OAuth 2.0 Specification](http://tools.ietf.org/html/rfc6749) utilizando como framework/plataforma [Spring Security OAuth 2](https://projects.spring.io/spring-security-oauth/docs/oauth2.html).
-
-Atualmente os tipos de Grants suportados são
---------------------------------------------
-
-* Authorization Code Grant - Password
-* Resource Owner Password Credentials Grant - Acces Token
-* Client Credentials Grant
-
-Token de acesso e JWT
----------------------
-A implementação do sistema de autenticação permite a utilização default de [JSON Web Tokens](https://jwt.io/). Você pode utilizar a implementação online para validar visualizar os dados do token. Mais informações em https://jwt.io/introduction/.
+Este módulo provê uma API Restful para gerenciamento dos usuários autorizados pelo [Security OAuth 2 - OAuth 2 Server](https://gitlab.rbs.com.br/rbsdev/security-oauth2/tree/master/security-oauth2-server).
 
 ## Getting Started
 
@@ -19,7 +8,7 @@ Essas instruções fará com que você consiga uma cópia do projeto pronta para
 
 ### Pré-requisitos
 
-Clone de GIT Hub e então use Gradle 3.4.* e Java 8:
+Clone de RBS GIT Lab e então use Gradle 3.4.* e Java 8:
 
 ```
 git clone ...
@@ -30,16 +19,16 @@ git clone ...
 Passo a passo para ter um ambiente pronto para desenvolvimento.
 
 ```
-cd security-oauth2/security-oauth2-server/
-gradle :security-oauth2-server:build -x test
+cd security-oauth2/security-oauth2-resource/
+gradle :security-oauth2-resource:build -x test
 ```
 
 ## Iniciando a aplicação
 
-O servidor irá levantar uma aplicação tomcat embeded na porta http://localhost:9000.
+O servidor irá levantar uma aplicação tomcat embeded na porta http://localhost:9001.
 
 ```
-gradle :security-oauth2-server:bootRun
+gradle :security-oauth2-resource:bootRun
 ```
 
 ## O que fazer quando estiver iniciado?
@@ -76,7 +65,7 @@ A resposta do servidor com o token de acesso:
     "expires_in": 35999, 
     "jti": "043fe44b-1e85-40fa-b161-0ac933a231ec", 
     "refresh_token": "<REFRESH TOKEN>", 
-    "scope": "read create update delete", 
+    "scope": "exibicao criacao atualizacao exclusao", 
     "token_type": "bearer"
 }
 
@@ -97,26 +86,26 @@ http http://localhost:9001/oauth/user 'Authorization:Bearer <ACCESS TOKEN>'
             "name": "ROLE_USER", 
             "resources": [
                 {
-                    "endpoint": "resource1", 
+                    "endpoint": "carrinhos", 
                     "grants": [
                         "read", 
                         "update", 
                         "create", 
                         "delete"
                     ], 
-                    "prefix": "prefix", 
-                    "resourceUri": "/prefix/resource1"
+                    "prefix": "loja", 
+                    "resourceUri": "/loja/carrinhos"
                 }, 
                 {
-                    "endpoint": "resource2", 
+                    "endpoint": "backoffice", 
                     "grants": [
                         "read", 
                         "update", 
                         "create", 
                         "delete"
                     ], 
-                    "prefix": "prefix", 
-                    "resourceUri": "/prefix/resource2"
+                    "prefix": "loja", 
+                    "resourceUri": "/loja/backoffice"
                 }
             ]
         }
@@ -144,13 +133,14 @@ http http://localhost:9001/oauth/user 'Authorization:Bearer <ACCESS TOKEN>'
 
 ## Versionamento
 
-We use [Git Hub](https://github.com/danielbarcellos) for versioning. For the versions available, see the [tags on this repository](https://github.com/danielbarcellos/security-oauth2). 
+We use [RBS GIT Lab](https://gitlab.rbs.com.br) for versioning. For the versions available, see the [tags on this repository](https://gitlab.rbs.com.br/rbsdev/security-oauth2). 
 
 ## Authors
 
-* **Daniel Barcellos** - *Initial work* - [Daniel Barcellos](https://github.com/danielbarcellos)
+* **Daniel Barcellos** - *Initial work* - [TC-Daniel_Barcellos](https://gitlab.rbs.com.br/TC-Daniel_Barcellos)
 
 ## Agradecimentos
 
 * My family
 * Google
+
