@@ -12,16 +12,16 @@ Para mais informações sobre OAuth 2 visite o site do [Spring Security OAuth2](
 
 ## Getting Started
 
-Clone de [RBS GIT Lab](https://gitlab.rbs.com.br/rbsdev/security-oauth2) e então use Gradle 3.4.* e Java 8:
+Clone de [GIT Hub](https://github.com/danielbarcellos/security-oauth2) e então use Gradle 3.4.* e Java 8:
 
 ```
 git clone ...
 ```
 ## Módulos
 
-* [Security OAuth 2 - OAuth 2 Server](https://gitlab.rbs.com.br/rbsdev/security-oauth2/tree/master/security-oauth2-resource) - OAuth 2 Server.
-* [Security OAuth 2 - Resource Server](https://gitlab.rbs.com.br/rbsdev/security-oauth2/tree/master/security-oauth2-resource) - Resource server.
-* [Security OAuth 2 - Common API](https://gitlab.rbs.com.br/rbsdev/security-oauth2/tree/master/security-oauth2-common) - Objetos de uso comum.
+* [Security OAuth 2 - OAuth 2 Server](https://github.com/danielbarcellos/security-oauth2/tree/master/security-oauth2-resource) - OAuth 2 Server.
+* [Security OAuth 2 - Resource Server](https://github.com/danielbarcellos/security-oauth2/tree/master/security-oauth2-resource) - Resource server.
+* [Security OAuth 2 - Common API](https://github.com/danielbarcellos/security-oauth2/tree/master/security-oauth2-common) - Objetos de uso comum.
 
 ## Veja mais
 
@@ -40,11 +40,11 @@ git clone ...
 
 ## Versionamento
 
-We use [RBS GIT Lab](https://gitlab.rbs.com.br) for versioning. For the versions available, see the [tags on this repository](https://gitlab.rbs.com.br/rbsdev/security-oauth2). 
+We use [GIT Hub](https://github.com) for versioning. For the versions available, see the [tags on this repository](https://github.com/danielbarcellos/security-oauth2). 
 
 ## Authors
 
-* **Daniel Barcellos** - *Initial work* - [TC-Daniel_Barcellos](https://gitlab.rbs.com.br/TC-Daniel_Barcellos)
+* **Daniel Barcellos** - *Initial work* - [Daniel Barcellos](https://github.com/danielbarcellos/security-oauth2)
 
 ## Agradecimentos
 
